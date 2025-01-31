@@ -36,7 +36,7 @@ export default function RootLayout({
             backgroundPosition: 'center',
           }}
         >
-          <div className='flex'>
+          <div className='flex backdrop-blur-md'>
             <Sidebar />
             <div className='flex-1'>
               <Navbar />
