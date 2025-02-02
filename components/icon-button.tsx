@@ -1,3 +1,5 @@
+"use client";
+
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -11,7 +13,7 @@ export default function IconButton({ children, className, ...rest }: Props) {
     <button
       {...rest}
       className={twMerge(
-        'h-[50px] w-[50px] rounded-md flex items-center justify-center bg-primary',
+        'h-[50px] w-[50px] rounded-md flex items-center justify-center bg-primary transition-colors duration-300',
         className,
       )}
     >

@@ -22,30 +22,32 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className='flex flex-row justify-between p-3 w-[1092px] mx-auto'>
-      <div className='flex flex-row space-x-7 md:space-y-0'>
-        <SearchInput />
-        <DropDown
-          isOpend={isDropDownOpend}
-          setIsOpend={setIsDropDownOpend}
-          data={WILAYAS}
-          selectedItem={dropDownSelectedItem}
-          setSelectedItem={setDropDownSelectedItem}
-        />
-      </div>
+    <div className='w-full h-20 z-10'>
+      <div className='flex flex-row justify-between p-3 w-[1092px] mx-auto'>
+        <div className='flex flex-row space-x-7 md:space-y-0'>
+          <SearchInput />
+          <DropDown
+            isOpend={isDropDownOpend}
+            setIsOpend={setIsDropDownOpend}
+            data={WILAYAS}
+            selectedItem={dropDownSelectedItem}
+            setSelectedItem={setDropDownSelectedItem}
+          />
+        </div>
 
-      <div className='flex space-x-7 items-center'>
-        <h3 className='text-lg text-white font-semibold leading-[18px]'>
-          Admin Name
-        </h3>
+        <div className='flex space-x-7 items-center'>
+          <h3 className='text-lg text-white font-semibold leading-[18px]'>
+            Admin Name
+          </h3>
 
-        <div>
-          <h3 className='text-lg text-white font-semibold leading-[18px] text-center'>
-            {currentDateTime.toFormat('dd-MM-yyyy')}
-          </h3>
-          <h3 className='text-lg text-white font-semibold leading-[18px] text-center'>
-            {currentDateTime.toFormat('HH:mm:ss')}
-          </h3>
+          <div>
+            <h3 className='text-lg text-white font-semibold leading-[18px] text-center'>
+              {currentDateTime.toFormat('dd-MM-yyyy')}
+            </h3>
+            <h3 className='text-lg text-white font-semibold leading-[18px] text-center'>
+              {currentDateTime.toFormat('HH:mm:ss')}
+            </h3>
+          </div>
         </div>
       </div>
     </div>
