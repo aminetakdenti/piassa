@@ -1,6 +1,6 @@
 'use client';
 
-import { Chart, EditProfileForm, IconButton } from '@/components';
+import { Chart, DeleteModal, EditProfileForm, IconButton } from '@/components';
 import { User } from '@/lib/types';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -82,6 +82,7 @@ export default function Home() {
   );
   const [showEditProfile, setShowEditProfile] = useState<boolean>(false);
   const [showDetails, setShowDetails] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const onShowItem = (item: (typeof tableRows)[number]) => {
     if (!showItem) {
@@ -114,8 +115,17 @@ export default function Home() {
     setShowDetails(!showDetails);
   };
 
+  const onCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const onOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <div className='flex-1 z-10 overflow-y-scroll'>
+      <DeleteModal isOpen={isModalOpen} onClose={onCloseModal} />
       <header className='mx-auto w-[1062px]'>
         <div className='flex justify-end'>
           <button className='flex items-center justify-between rounded-md w-[285px] h-12 bg-secondary text-white px-4 hover:bg-primary transition-colors duration-300'>
@@ -268,7 +278,7 @@ export default function Home() {
                   <IconButton
                     className='size-[50px] hover:bg-[#EDEBEBCC]'
                     onClick={() => {
-                      // delete item callback
+                      onOpenModal();
                     }}
                   >
                     <Image

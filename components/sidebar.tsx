@@ -3,7 +3,7 @@ import IconButton from './icon-button';
 
 export default function Sidebar() {
   return (
-    <div className='fixed top-0 left-0 bottom-0 w-32 bg-white/10 backdrop-blur-xl flex flex-col items-center z-20'>
+    <div className='fixed top-0 left-0 bottom-0 w-32 bg-white/10 backdrop-blur-xl flex flex-col items-center'>
       <Image
         src='/piassa_logo.svg'
         width={115}
